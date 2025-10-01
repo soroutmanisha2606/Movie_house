@@ -1,0 +1,8 @@
+.movie_cards{
+    display: flex;
+}
+.movie_card{
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid black;
+}
