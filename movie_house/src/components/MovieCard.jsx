@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from 'react-router-dom';
 
-export const MovieCard = ({ name, img, overview, handleWishlist, isWishlisted,handleRemove }) => {
+export const MovieCard = ({ name, img, overview, handleWishlist, isWishlisted }) => {
   return (
     <Box
       sx={{
@@ -82,11 +82,9 @@ export const MovieCard = ({ name, img, overview, handleWishlist, isWishlisted,ha
               sx={{
                 fontSize: 28,
                 color: isWishlisted ? '#e50914' : '#ffffffa8',
-               
-               
+                              
               }}
-            /></Link>
-            
+            /></Link>            
         
         </Box>
       </Box>

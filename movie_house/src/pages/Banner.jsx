@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 const Banner = () => {
   const bannerImg =
-    'https://image.tmdb.org/t/p/original/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg'; // sample banner img
+    'https://image.tmdb.org/t/p/original/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg'; 
 
   return (
     <Box

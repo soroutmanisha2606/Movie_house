@@ -1,19 +1,13 @@
-import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
 import Box from "@mui/material/Box";
-
 import { Link } from "react-router-dom";
+import Badge from "@mui/material/Badge";
 
-
-
-
-const Navbar = () => {
+const Navbar = () => {  
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "#1c1c1c" }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -39,7 +33,7 @@ const Navbar = () => {
         </Link>
 
         <Box sx={{ display: "flex", alignItems: "center" }}>
-   
+    
           <IconButton size="large" edge="end" color="inherit" aria-label="wishlist" sx={{ ml: { xs: 1, sm: 3 } }}>
             <Link
               to="/movies/wishlist"
@@ -49,10 +43,12 @@ const Navbar = () => {
                 display: "flex",
                 alignItems: "center",
               }}
-            >
-              <FavoriteIcon />
+            >             
+           <FavoriteIcon />
             </Link>
           </IconButton>
+      
+          
         </Box>
       </Toolbar>
     </AppBar>
