@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import { Home } from './pages/Home';
-import { Movies } from './pages/Movies';
 import  { BrowserRouter, Routes ,Route} from 'react-router-dom';
 import { MovieDetail } from './pages/MovieDetail';
 import { Wishlist } from './pages/Wishlist';
@@ -16,8 +14,6 @@ function App() {
       <Route path='/movies/wishlist' element={<Wishlist/>}/>
     </Routes>
     </BrowserRouter>
- 
-
  </>
   );
 }

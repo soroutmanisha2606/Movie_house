@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Input from '@mui/material/Input';
 
-const API_KEY = "4558d1cc5e7ed19d582b263db4cd7015";
+const API_KEY = process.env.API_KEY;
 
 export const Movies = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,19 +16,10 @@ export const Movies = () => {
       .then((res) => res.json())
       .then((data) => setMovies(data.results))
       .catch((err) => console.error(err));
-  }, []);
-  // Save wishlist to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }, [wishlist]);
-
-
-  useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("wishlist")) || [];
+       const stored = JSON.parse(localStorage.getItem("wishlist")) || [];
     setWishlist(stored);
   }, []);
-
-  
+ 
 
     const handleWishlist = (movie) => {
     const exists = wishlist.some((item) => item.id === movie.id);
@@ -36,7 +27,9 @@ export const Movies = () => {
       ? wishlist.filter((item) => item.id !== movie.id) // remove if already exists
       : [...wishlist, movie]; // add
     setWishlist(updated);
+    localStorage.setItem("wishlist", JSON.stringify(updated));
   };
+
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
