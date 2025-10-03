@@ -8,6 +8,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
 import Box from "@mui/material/Box";
 import { alpha, styled } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 
 
 const Search = styled("div")(({ theme }) => ({
@@ -56,7 +57,7 @@ const Navbar = () => {
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "#1c1c1c" }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-      
+      <Link to="/">
         <Typography
           variant="h6"
           noWrap
@@ -65,11 +66,8 @@ const Navbar = () => {
         >
           🎬 Movie House
         </Typography>
-
-       
-
-
-       
+        </Link>
+      
         <IconButton
           size="large"
           edge="end"
@@ -77,7 +75,7 @@ const Navbar = () => {
           aria-label="wishlist"
           sx={{ ml: 4 }}
         >
-          <FavoriteIcon />
+      <Link to="/movies/wishlist"><FavoriteIcon /></Link>    
         </IconButton>
       </Toolbar>
     </AppBar>

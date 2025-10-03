@@ -2,8 +2,9 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Link } from 'react-router-dom';
 
-export const MovieCard = ({ name, img ,overview}) => {
+export const MovieCard = ({ name, img, overview, handleWishlist, isWishlisted,handleRemove }) => {
   return (
     <Box
       sx={{
@@ -21,7 +22,6 @@ export const MovieCard = ({ name, img ,overview}) => {
         },
       }}
     >
-      {/* Background image */}
       <img
         src={img}
         alt={name}
@@ -33,7 +33,6 @@ export const MovieCard = ({ name, img ,overview}) => {
         }}
       />
 
-      {/* Black gradient overlay */}
       <Box
         sx={{
           position: 'absolute',
@@ -48,13 +47,12 @@ export const MovieCard = ({ name, img ,overview}) => {
           p: 2,
         }}
       >
-    
         <Typography
           variant="subtitle1"
           sx={{
             color: 'white',
             fontWeight: 'bold',
-            fontSize:21,
+            fontSize: 21,
             textShadow: '0px 0px 6px rgba(0,0,0,0.8)',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
@@ -63,40 +61,33 @@ export const MovieCard = ({ name, img ,overview}) => {
         >
           {name}
         </Typography>
-      <Typography
-  variant="body2"
-  sx={{
-    color: 'white',
-    textShadow: '0px 0px 6px rgba(0,0,0,0.8)',
-    display: '-webkit-box',
-    WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: 3, 
-    overflow: 'hidden',
-  }}
->
-  {overview}
-</Typography>
 
-   
-        <Box
+        <Typography
+          variant="body2"
           sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            mt: 1,
+            color: 'white',
+            textShadow: '0px 0px 6px rgba(0,0,0,0.8)',
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 3,
+            overflow: 'hidden',
           }}
         >
-          <FavoriteIcon
-            sx={{
-              fontSize: 28,
-              color: '#ffffffa8',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                color: '#e50914',
-                transform: 'scale(1.2)',
-              },
-            }}
-          />
+          {overview}
+        </Typography>
+
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+        
+            <Link  onClick={handleWishlist}><FavoriteIcon
+              sx={{
+                fontSize: 28,
+                color: isWishlisted ? '#e50914' : '#ffffffa8',
+               
+               
+              }}
+            /></Link>
+            
+        
         </Box>
       </Box>
     </Box>
