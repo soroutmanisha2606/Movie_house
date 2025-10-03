@@ -4,7 +4,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Input from '@mui/material/Input';
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
+console.log("API_KEY---",API_KEY)
 
 export const Movies = () => {
   const [searchTerm, setSearchTerm] = useState("");
