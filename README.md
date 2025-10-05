@@ -16,7 +16,7 @@ Movie House is a React-based web application that allows users to explore, searc
 ## 🛠️ Tech Stack
 
 - **Frontend:** React, Material UI, React Router  
-- **State Management:** Redux / LocalStorage  
+- **State Management:**  LocalStorage  
 - **Styling:** CSS & Material UI Components
 
 ---
@@ -28,3 +28,5 @@ Follow these steps to run the project locally:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/movie_house.git
+
+npm start
